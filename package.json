@@ -3,10 +3,27 @@
   "version": "0.1.0",
   "description": "Test your postcss plugin easily",
   "main": "lib/index.js",
-  "dependencies": {},
-  "devDependencies": {},
+  "dependencies": {
+    "ava": "^0.17.0",
+    "jest": "^17.0.3",
+    "postcss": "^5.2.6"
+  },
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-eslint": "^7.1.1",
+    "babel-preset-es2015-node4": "^2.1.0",
+    "xo": "^0.17.1"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prebuild": "rm -rf lib",
+    "build": "babel src --out-dir lib",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "release:patch": "npm test && npm run build && npm version patch",
+    "release:minor": "npm test && npm run build && npm version minor",
+    "release:major": "npm test && npm run build && npm version major",
+    "release:quick": "npm test && npm run build && git add -A && git commit -m 'Quick release patch' && npm version patch",
+    "postversion": "git push && git push --tags && npm publish --access public",
+    "test": "xo"
   },
   "repository": {
     "type": "git",
@@ -23,5 +40,21 @@
   "bugs": {
     "url": "https://github.com/dmarchena/postcss-test-fixtures/issues"
   },
-  "homepage": "https://github.com/dmarchena/postcss-test-fixtures#readme"
+  "homepage": "https://github.com/dmarchena/postcss-test-fixtures#readme",
+  "xo": {
+    "env": [
+      "node",
+      "jest"
+    ],
+    "space": 2,
+    "esnext": true,
+    "overrides": [
+      {
+        "files": "src/test-fixture-ava.js",
+        "rules": {
+          "ava/no-ignored-test-files": "off"
+        }
+      }
+    ]
+  }
 }
