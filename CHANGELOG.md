@@ -1,3 +1,16 @@
+# 0.2.2 - 2016-12-09
+
+- Fix: XO config: turn off "import/no-unresolved" for test files
+
+```
+{
+  "files": "__tests__/*.js",
+  "rules": {
+    "import/no-unresolved": "off"
+  }
+}
+```
+
 # 0.2.1 - 2016-12-09
 
 - Fix: Fixtures default path should be '/__tests__/fixtures/'
