@@ -63,3 +63,7 @@ npm i -D jest
 [node-image]: https://img.shields.io/badge/node_version-%3E=4-orange.svg
 [xo-image]: https://img.shields.io/badge/code_style-XO-5ed9c7.svg
 [xo-url]: https://github.com/sindresorhus/xo
+
+## License
+
+MIT © [dmarchena](https://github.com/dmarchena)
