@@ -4,26 +4,27 @@
   "description": "Test your postcss plugin easily",
   "main": "lib/index.js",
   "dependencies": {
-    "ava": "^0.17.0",
     "jest": "^17.0.3",
     "postcss": "^5.2.6"
   },
   "devDependencies": {
-    "babel": "^6.5.2",
-    "babel-eslint": "^7.1.1",
+    "babel-cli": "^6.18.0",
+    "babel-jest": "^17.0.2",
     "babel-preset-es2015-node4": "^2.1.0",
+    "coveralls": "^2.11.15",
+    "postcss-size": "^1.1.1",
     "xo": "^0.17.1"
   },
   "scripts": {
     "prebuild": "rm -rf lib",
     "build": "babel src --out-dir lib",
-    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "coverage": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "release:patch": "npm test && npm run build && npm version patch",
     "release:minor": "npm test && npm run build && npm version minor",
     "release:major": "npm test && npm run build && npm version major",
     "release:quick": "npm test && npm run build && git add -A && git commit -m 'Quick release patch' && npm version patch",
     "postversion": "git push && git push --tags && npm publish --access public",
-    "test": "xo"
+    "test": "xo && npm run build && jest --coverage"
   },
   "repository": {
     "type": "git",
@@ -41,6 +42,13 @@
     "url": "https://github.com/dmarchena/postcss-test-fixtures/issues"
   },
   "homepage": "https://github.com/dmarchena/postcss-test-fixtures#readme",
+  "jest": {
+    "verbose": true,
+    "transform": {
+      ".js": "<rootDir>/node_modules/babel-jest"
+    },
+    "testRegex": "/test/[^/]*\\.js$"
+  },
   "xo": {
     "env": [
       "node",
@@ -48,11 +56,20 @@
     ],
     "space": 2,
     "esnext": true,
+    "ignores": [
+      "test/local-plugin/*.js"
+    ],
     "overrides": [
       {
-        "files": "src/test-fixture-ava.js",
+        "files": "src/utils/process-fixture.js",
         "rules": {
-          "ava/no-ignored-test-files": "off"
+          "import/no-dynamic-require": "off"
+        }
+      },
+      {
+        "files": "test/*.js",
+        "rules": {
+          "import/no-unresolved": "off"
         }
       }
     ]

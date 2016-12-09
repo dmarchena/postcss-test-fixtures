@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+  - v7
+  - v6
+  - v5
+  - v4
+
+cache:
+  directories:
+    - node_modules
+
+before_install:
+  - npm i nsp -g
+
+after_script:
+  - nsp audit-package
+  - npm run coverage
