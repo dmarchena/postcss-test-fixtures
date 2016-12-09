@@ -11,7 +11,7 @@ function fetchFixtures() {
 
 export default {
   config,
-  run(plugin) {
+  run(plugin = process.cwd()) {
     fetchFixtures().map(fixture => test(createFixture(fixture, config), plugin, config));
   }
 };
