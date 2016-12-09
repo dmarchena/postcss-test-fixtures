@@ -1,7 +1,7 @@
 import {existsSync} from 'fs';
 import {join} from 'path';
 
-const defaultFixturesPath = join(process.cwd(), 'test/fixtures');
+const defaultFixturesPath = join(process.cwd(), '__tests__/fixtures');
 const properties = {
   framework: 'jest',
   pluginOpts: {},
