@@ -1,6 +1,6 @@
 {
   "name": "postcss-test-fixtures",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Test your postcss plugin easily",
   "main": "lib/index.js",
   "dependencies": {
