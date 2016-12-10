@@ -1,11 +1,11 @@
 # 0.2.3 - 2016-12-10
 
-- Fix: jest as peerDependency
-- Fix: .npmignore: add __tests__/
+- Fixed: jest as peerDependency
+- Fixed: .npmignore: add __tests__/
 
 # 0.2.2 - 2016-12-09
 
-- Fix: XO config: turn off "import/no-unresolved" for test files
+- Fixed: XO config: turn off "import/no-unresolved" for test files
 
 ```
 {
@@ -18,8 +18,8 @@
 
 # 0.2.1 - 2016-12-09
 
-- Fix: Fixtures default path should be '/__tests__/fixtures/'
-- Fix: Clean coverage data before "test" task.
+- Fixed: Fixtures default path should be '/__tests__/fixtures/'
+- Fixed: Clean coverage data before "test" task.
 - Added: Usage instructions.
 
 # 0.2.0 - 2016-12-09
