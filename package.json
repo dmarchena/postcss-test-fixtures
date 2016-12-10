@@ -4,7 +4,6 @@
   "description": "Test your postcss plugin easily",
   "main": "lib/index.js",
   "dependencies": {
-    "jest": "^17.0.3",
     "postcss": "^5.2.6"
   },
   "devDependencies": {
@@ -12,8 +11,12 @@
     "babel-jest": "^17.0.2",
     "babel-preset-es2015-node4": "^2.1.0",
     "coveralls": "^2.11.15",
+    "jest": "^17.0.3",
     "postcss-size": "^1.1.1",
     "xo": "^0.17.1"
+  },
+  "peerDependencies": {
+    "jest": "^17.0.3"
   },
   "scripts": {
     "prebuild": "rm -rf lib",

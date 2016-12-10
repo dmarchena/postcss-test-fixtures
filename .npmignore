@@ -5,6 +5,7 @@
 .travis.yml
 .yo-rc.json
 src/
+__tests__/
 test/
 coverage/
 .nyc_output
