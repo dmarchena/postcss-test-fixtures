@@ -1,18 +1,21 @@
 {
   "name": "postcss-test-fixtures",
-  "version": "0.2.3",
+  "version": "1.0.0",
   "description": "Test your postcss plugin easily",
   "main": "lib/index.js",
   "dependencies": {
-    "postcss": "^5.2.6"
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "coveralls": "^2.13.1",
+    "postcss": "^6.0.10"
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",
-    "babel-jest": "^17.0.2",
+    "babel-jest": "^21.0.0",
     "babel-preset-es2015-node4": "^2.1.0",
     "coveralls": "^2.11.15",
-    "jest": "^17.0.3",
-    "postcss-size": "^1.1.1",
+    "jest": "^21.0.0",
+    "postcss-size": "^2.0.0",
     "xo": "^0.17.1"
   },
   "peerDependencies": {
